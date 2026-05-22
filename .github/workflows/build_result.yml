@@ -32,4 +32,4 @@ jobs:
           context: ./result
           file: result/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/votingapp-worker:${{ github.run_number }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/votingapp-result:${{ github.run_number }}
