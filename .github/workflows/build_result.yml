@@ -5,10 +5,9 @@ on:
   push:
     branches:
       - main
-
-  pull_request:
-    branches:
-      - main
+    paths:
+      - 'result/**'
+      - '.github/workflows/build-result.yaml'
 
 jobs:
   build:
