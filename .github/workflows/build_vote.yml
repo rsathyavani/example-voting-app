@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-   paths:
+    paths:
       - 'vote/**'
       - '.github/workflows/build-vote.yaml'
 
