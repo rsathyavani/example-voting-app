@@ -5,10 +5,9 @@ on:
   push:
     branches:
       - main
-
-  pull_request:
-    branches:
-      - main
+    paths:
+      - 'worker/**'
+      - '.github/workflows/build-worker.yaml'
 
 jobs:
   build:
