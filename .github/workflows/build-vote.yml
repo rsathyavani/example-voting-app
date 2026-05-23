@@ -45,6 +45,8 @@ jobs:
 
       - name: Update image tag
         run: |
+          git config --global user.name "CI Bot"
+          git config --global user.email "ci-bot@example.com"
           sed -i 's|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/votingapp-vote:${{ github.run_number }}|g' k8s-specifications/vote-deployment.yaml
           git add k8s-specifications/vote-deployment.yaml
           git commit -m "update image tag" && git push
