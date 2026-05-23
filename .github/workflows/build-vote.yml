@@ -28,13 +28,8 @@ jobs:
             -Dsonar.organization=rsathyavani
             -Dsonar.projectKey=rsathyavani_votingapp-vote
             -Dsonar.sources=vote
-
-      - name: SonarQube Quality Gate Check
-        uses: SonarSource/sonarqube-quality-gate-action@v1.2.0
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      
+            -Dsonar.qualitygate.wait=true
+            
       - name: Login to Docker Hub
         uses: docker/login-action@v4.1.0
         with:
