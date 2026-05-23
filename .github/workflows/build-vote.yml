@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - 'vote/**'
-      - '.github/workflows/build-vote.yaml'
+      - '.github/workflows/build-vote.yml'
 
 jobs:
   build:
