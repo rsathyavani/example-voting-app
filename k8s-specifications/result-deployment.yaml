@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: rsathyavani/votingapp-result:3
+      - image: rsathyavani/votingapp-result:5
         name: result
         ports:
         - containerPort: 80
