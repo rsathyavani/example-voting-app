@@ -10,7 +10,7 @@ on:
       - '.github/workflows/build-worker.yml'
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 7.0.x
-
+  build_sonarscan:
+    runs-on: ubuntu-latest
+    
+    steps:
       - name: Install SonarScanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
@@ -57,7 +56,11 @@ jobs:
         run: |
           dotnet sonarscanner end \
             /d:sonar.login="$SONAR_TOKEN"
-          
+  
+  dockerbuildandpush:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Login to Docker Hub
         uses: docker/login-action@v4.1.0
         with:
