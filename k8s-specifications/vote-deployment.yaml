@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: rsathyavani/votingapp-vote:8
+      - image: rsathyavani/votingapp-vote:9
         name: vote
         ports:
         - containerPort: 80
